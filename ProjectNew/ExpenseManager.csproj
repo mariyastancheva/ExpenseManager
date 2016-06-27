@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A243CFE3-BD14-4CEF-BF43-A43CB69291BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectNew</RootNamespace>
+    <AssemblyName>ProjectNew</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Graphics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Initial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\Currency.cs" />
+    <Compile Include="Enums\ExpenseType.cs" />
+    <Compile Include="Calculator.xaml.cs">
+      <DependentUpon>Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Graphics.xaml.cs">
+      <DependentUpon>Graphics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsOrganizer\Graphic.cs" />
+    <Compile Include="Initial.xaml.cs">
+      <DependentUpon>Initial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="FileOrganizer\FileCleaner.cs" />
+    <Compile Include="FileOrganizer\FileReader.cs" />
+    <Compile Include="FileOrganizer\FileWriter.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\wp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\registerr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\log new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\calc icons\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\calc icons\19228102-car-red-circle-web-glossy-icon--Stock-Photo.jpg" />
+    <Resource Include="Resorces\calc icons\3-ontwerp.png" />
+    <Resource Include="Resorces\calc icons\Car-icon.png" />
+    <Resource Include="Resorces\calc icons\carr.png" />
+    <Resource Include="Resorces\calc icons\clothes.png" />
+    <Resource Include="Resorces\calc icons\download %281%29.png" />
+    <Resource Include="Resorces\calc icons\download.jpg" />
+    <Resource Include="Resorces\calc icons\download.png" />
+    <Resource Include="Resorces\calc icons\first-aid-256.png" />
+    <Resource Include="Resorces\calc icons\household-icon.png" />
+    <Resource Include="Resorces\calc icons\ICON_protein.png" />
+    <Resource Include="Resorces\calc icons\images.jpg" />
+    <Resource Include="Resorces\calc icons\images.png" />
+    <Resource Include="Resorces\calc icons\Medical_icons-03-5121.png" />
+    <Resource Include="Resorces\calc icons\perfume_bottle_fragrance_cosmetics_spray_beauty_fashion_accessories_perfumery_odor_scent_glamour_vaporizer_flat_design_icon-512.png" />
+    <Resource Include="Resorces\calc icons\red-cocktail-icon-56567.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\calc icons\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\calc icons\taxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\calc icons\coctail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\backICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\i.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\Red_cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\currency\Bg.png" />
+    <Resource Include="Resorces\currency\EU.png" />
+    <Resource Include="Resorces\currency\UK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\currency\BGG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\currency\EUU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resorces\currency\EUUU.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
